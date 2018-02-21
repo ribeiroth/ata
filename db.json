@@ -2,85 +2,83 @@
   "monicas": [
     {
       "title": "ATA",
-      "keys": [
+      "tags": [
         "ata"
       ],
-      "photo_link": "https://i.imgur.com/hUAG0as.jpg",
+      "image": "https://i.imgur.com/hUAG0as.jpg",
       "show": true,
-      "id": 1
+      "id": 1,
+      "score": 0
     },
     {
       "title": "Traumatizada",
-      "keys": [
+      "tags": [
         "traumatizada",
         "eu to muito traumatizada"
       ],
-      "photo_link": "https://catracalivre.com.br/wp-content/uploads/2017/12/monica-4.jpg",
+      "image": "https://catracalivre.com.br/wp-content/uploads/2017/12/monica-4.jpg",
       "show": true,
-      "id": 2
+      "id": 2,
+      "score": 1
     },
     {
       "title": "Elsa Livre Estou",
-      "keys": [
+      "tags": [
         "frozen",
         "livre estou",
         "elsa"
       ],
-      "photo_link": "https://s-media-cache-ak0.pinimg.com/originals/54/cb/0d/54cb0db8359c2daa3b56d050e859699c.jpg",
+      "image": "https://s-media-cache-ak0.pinimg.com/originals/54/cb/0d/54cb0db8359c2daa3b56d050e859699c.jpg",
       "show": true,
-      "id": 3
+      "id": 3,
+      "score": 1
     },
     {
       "title": "Chico Bento",
-      "keys": [
+      "tags": [
         "qui bao",
         "chico bento"
       ],
-      "photo_link": "http://pm1.narvii.com/6339/3e5fff363bd9f70ab7a512ab78c659f8fd57e5b7_00.jpg",
+      "image": "http://pm1.narvii.com/6339/3e5fff363bd9f70ab7a512ab78c659f8fd57e5b7_00.jpg",
       "show": true,
-      "id": 4
+      "id": 4,
+      "score": 0
     },
     {
       "title": "Já postaram 100 vezes",
-      "keys": [
+      "tags": [
         "ja postaram",
         "cem vezes",
         "cem"
       ],
-      "photo_link": "https://i.pinimg.com/564x/92/7d/a7/927da733659653cfd2bef0f99ef920b4.jpg",
+      "image": "https://i.pinimg.com/564x/92/7d/a7/927da733659653cfd2bef0f99ef920b4.jpg",
       "show": true,
-      "id": 5
+      "id": 5,
+      "score": 0
     },
     {
       "title": "It - coisada",
-      "keys": [
+      "tags": [
         "it",
         "coisada"
       ],
-      "photo_link": "https://pbs.twimg.com/media/DKNiYIiXUAAd5zg?format=jpg",
-      "show": true,
-      "id": 6
+      "image": "https://pbs.twimg.com/media/DKNiYIiXUAAd5zg?format=jpg",
+      "show": false,
+      "id": 6,
+      "score": 0
     },
     {
       "title": "Que tiro foi esse",
-      "keys": [
+      "tags": [
         "tiro",
         "que tiro foi esse",
         "toddynho",
         "jojo"
       ],
-      "photo_link": "https://s-media-cache-ak0.pinimg.com/originals/e2/d8/96/e2d8967b99ef6866032e88b95904f57f.jpg",
-      "show": true,
-      "id": 7
-    },
-    {
-      "title": "teste",
-      "keys": [
-        "tag"
-      ],
-      "photo_link": "teste",
-      "show": true,
-      "id": 8
+      "image": "https://s-media-cache-ak0.pinimg.com/originals/e2/d8/96/e2d8967b99ef6866032e88b95904f57f.jpg",
+      "show": false,
+      "id": 7,
+      "score": 0
     }
   ]
 }

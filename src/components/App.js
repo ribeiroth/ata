@@ -4,7 +4,6 @@ import * as actions from '../actions'
 import SideMenu from 'react-burger-menu'
 import PropTypes from 'prop-types'
 import MonicasList from "./monicas/List"
-import theme from "./theme"
 import Home from "./home"
 
 class App extends React.Component {

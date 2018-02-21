@@ -1,4 +1,4 @@
-export const fetchMonicas = () => (
+export const getMonicas = () => (
     fetch('http://localhost:3004/monicas', {
       method: 'GET'
     })
@@ -17,10 +17,10 @@ export function saveMonicas(data){
   .then(response => response.json())
 }
 
-export function setShowMonica(id){
+export function setShowMonica(id, value){
   fetch('http://localhost:3004/monicas/'+id, {
     method: 'PATCH',
-    body: JSON.stringify({"show":true}),
+    body: JSON.stringify({"show":value}),
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -28,6 +28,31 @@ export function setShowMonica(id){
   })
   .then(response => response.json())
 }
+
+export function updateMonicaScore(id, value){
+  fetch('http://localhost:3004/monicas/'+id, {
+    method: 'PATCH',
+    body: JSON.stringify({"score":value}),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+  .then(response => response.json())
+}
+
+export function deleteMonica(id) {
+  fetch('http://localhost:3004/monicas/'+id, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+  .then(response => response.json())
+}
+
+
 
 
 

@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as api from '../api'
 import * as actions from '../actions/index'
-import { Divider, Image, Icon, Grid, Label, Segment, Card, Button, Checkbox} from 'semantic-ui-react'
+import { Image, Grid, Label, Card, Button, Checkbox} from 'semantic-ui-react'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { updateMonica } from '../api/index';
 
 class Admin extends React.Component {
   constructor(props){
@@ -15,37 +14,46 @@ class Admin extends React.Component {
   }
 
   componentDidMount() {
-    api.fetchMonicas().then( monicas => {
-      this.props.dispatch(actions.receiveMonicas(monicas))
+    api.getMonicas().then( monicas => {
+      this.props.dispatch(actions.receiveMonicas(monicas)),
       this.setState({monicas: monicas})
     })
   }
 
-  reload = () => {
-
+  handleChange = (e, {value}) => {
+    const tmp = this.state.monicas;
+    tmp[value].show= !this.state.monicas[value].show;
+    this.setState({monicas: tmp});
+    api.setShowMonica(value+1, tmp[value].show)
   }
 
-  handleChange = (e, { value }) => (api.setShowMonica(value), this.setState({monicas: this.state.monicas.map(m => m.id == value ? m.show=true : m.show=m.show )}))
-
-  render() {
+  handleRemove = (e, {value}) => {
+    const tmp = this.state.monicas.filter(monica => {if(monica.id !== value ){ return monica}})
+    this.setState({monicas: tmp});
+    api.deleteMonica(value)
+  }
+   
+  render(){
     return (
       <Card.Group color='teal'>
-        {this.state.monicas.map( monica => 
-          (<Card color='red'>
-              <Image src={monica.photo_link} size='medium'/>
-              <Card.Content>
-                <Card.Header>{monica.title}</Card.Header>
-              </Card.Content>
-              <Card.Content extra>
-                <Label.Group tag color='red'>{monica.keys.map( k => (<Label as='a'>{k}</Label>))}</Label.Group>
-              </Card.Content>
-              <Card.Content>
-                <Checkbox value={monica.id} onChange={this.handleChange} label="Visível" checked={monica.show}/>
-              </Card.Content>
-            </Card>
-            ))}
+        {this.state.monicas.map( monica => (
+          <Card color='red' key={monica.id}>
+            <Image src={monica.image} size='medium'/>
+            <Card.Content>
+              <Card.Header>{monica.title}</Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+              <Label.Group tag color='red'>{monica.tags.map( (tag, index) => (<Label as='a' key={index}>{tag}</Label>))}</Label.Group>
+            </Card.Content>
+            <Card.Content>
+              <Checkbox value={monica.id - 1} onChange={this.handleChange} label="Visível" checked={monica.show}/>
+            </Card.Content>
+            <Card.Content>
+              <Button  color='red' value={monica.id} onClick={this.handleRemove}>Remover</Button>
+            </Card.Content>
+          </Card>))}
       </ Card.Group>  
-  )
+    )
   }
 }
 
